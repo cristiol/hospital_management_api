@@ -8,3 +8,10 @@ class AssistantRegistrationView(generics.CreateAPIView):
     queryset = Assistant.objects.all()
     serializer_class = AssistantSerializer
     permission_classes = [IsGeneralManager]
+
+
+class AssistantListView(generics.ListAPIView):
+    queryset = Assistant.objects.all()
+    serializer_class = AssistantSerializer
+    permission_classes = [IsGeneralManager]
+
