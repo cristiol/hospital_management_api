@@ -15,3 +15,11 @@ class TreatmentsRegistrationView(generics.CreateAPIView):
     queryset = Treatment.objects.all()
     serializer_class = TreatmentSerializer
     permission_classes = [IsGeneralManager]
+
+
+class TreatmentsDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Treatment.objects.all()
+    serializer_class = TreatmentSerializer
+    permission_classes = [IsGeneralManager]
+    lookup_field = 'pk'
+
