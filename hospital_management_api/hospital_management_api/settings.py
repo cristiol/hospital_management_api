@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'assistants',
     'treatments',
     'doctors',
-    'patients'
+    'patients',
+    'reports',
 ]
 
 AUTH_USER_MODEL = 'users.User'

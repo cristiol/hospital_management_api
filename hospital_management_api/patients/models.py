@@ -14,5 +14,11 @@ class Patient(models.Model):
     applied_treatment = models.ForeignKey(Treatment, on_delete=models.CASCADE, blank=True, null=True,
                                           related_name='applied_treatment')
 
+    @property
+    def name(self):
+        return self.user.full_name
+
     def __str__(self):
         return F"Patient {self.user.full_name}"
+
+
