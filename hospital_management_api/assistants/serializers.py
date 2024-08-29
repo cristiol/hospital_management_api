@@ -28,7 +28,6 @@ class AssistantSerializer(serializers.ModelSerializer):
     def delete(self, instance):
         user = instance.user
         assistant_group = Group.objects.get(name='assistant')
-
         if assistant_group in user.groups.all():
             user.groups.remove(assistant_group)
         instance.delete()

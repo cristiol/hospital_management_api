@@ -15,3 +15,15 @@ class AssistantListView(generics.ListAPIView):
     serializer_class = AssistantSerializer
     permission_classes = [IsGeneralManager]
 
+
+class AssistantDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Assistant.objects.all()
+    serializer_class = AssistantSerializer
+    permission_classes = [IsGeneralManager]
+    lookup_field = 'pk'
+
+    def perform_destroy(self, instance):
+        serializer = self.get_serializer(instance)
+        serializer.delete(instance)
+
+
