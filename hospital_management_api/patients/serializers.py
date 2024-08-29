@@ -42,7 +42,6 @@ class PatientSerializer(serializers.ModelSerializer):
 
         patient.recommended_treatment = validated_data.get('recommended_treatment', None)
         patient.applied_treatment = validated_data.get('applied_treatment', None)
-
         patient.save()
 
         patient_group, created = Group.objects.get_or_create(name='patient')
