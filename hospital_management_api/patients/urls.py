@@ -1,6 +1,5 @@
 from django.urls import path
 
-from .serializers import UpdateAppliedTreatmentSerializer
 from .views import PatientRegistrationView, PatientListView, PatientDetailView, UpdateAssignedAssistantsView, \
     UpdateRecommendedTreatmentView, UpdateAppliedTreatmentView
 
