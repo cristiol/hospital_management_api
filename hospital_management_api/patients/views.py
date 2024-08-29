@@ -1,4 +1,7 @@
-from patients.serializers import PatientSerializer
+from assistants.permissions import IsAssignedAssistant
+from doctors.permissions import IsAssignedDoctor
+from patients.serializers import PatientSerializer, UpdateUpdateAssignedAssistantsSerializer, \
+    UpdateAppliedTreatmentSerializer, UpdateRecommendedTreatmentSerializer
 from users.permissions import IsGeneralManager
 from .models import Patient
 from rest_framework import generics
@@ -25,3 +28,28 @@ class PatientDetailView(generics.RetrieveUpdateDestroyAPIView):
     def perform_destroy(self, instance):
         serializer = self.get_serializer(instance)
         serializer.delete(instance)
+
+
+class UpdateAssignedAssistantsView(generics.UpdateAPIView):
+    queryset = Patient.objects.all()
+    serializer_class = UpdateUpdateAssignedAssistantsSerializer
+    permission_classes = [IsAssignedDoctor]
+    lookup_field = 'pk'
+
+
+class UpdateRecommendedTreatmentView(generics.UpdateAPIView):
+    queryset = Patient.objects.all()
+    serializer_class = UpdateRecommendedTreatmentSerializer
+    permission_classes = [IsAssignedDoctor]
+    lookup_field = 'pk'
+
+
+class UpdateAppliedTreatmentView(generics.UpdateAPIView):
+    queryset = Patient.objects.all()
+    serializer_class = UpdateAppliedTreatmentSerializer
+    permission_classes = [IsAssignedAssistant]
+    lookup_field = 'pk'
+
+
+
+

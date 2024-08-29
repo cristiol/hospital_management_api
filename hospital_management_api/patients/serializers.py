@@ -80,3 +80,4 @@ class UpdateUpdateAssignedAssistantsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Patient
         fields = ['assistants']
+
