@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from users.permissions import IsGeneralManager
+from .models import Assistant
+from rest_framework import generics
+from .serializers import AssistantSerializer
 
-# Create your views here.
+
+class AssistantRegistrationView(generics.CreateAPIView):
+    queryset = Assistant.objects.all()
+    serializer_class = AssistantSerializer
+    permission_classes = [IsGeneralManager]
