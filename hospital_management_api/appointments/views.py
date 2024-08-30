@@ -1,5 +1,7 @@
 from rest_framework import generics
 from django_filters import rest_framework as filters
+
+from patients.permissions import IsPatientOfAppointment, IsPatient
 from .tasks import send_confirmation_mail
 from appointments.models import Slot, Appointment
 from appointments.serializers import SlotSerializer, AppointmentSerializer
@@ -30,12 +32,14 @@ class AppointmentListView(generics.ListCreateAPIView):
 class AppointmentsDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
+    permission_classes = [IsPatientOfAppointment]
     lookup_field = 'pk'
 
 
 class AppointmentRegistrationView(generics.CreateAPIView):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
+    permission_classes = [IsPatient]
 
     def perform_create(self, serializer):
         serializer.save()
