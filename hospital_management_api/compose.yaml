@@ -19,6 +19,8 @@ services:
             - PG_PORT=5432
         depends_on:
             - pgdb
+            - rabbitmq
+
 
     pgdb:
         image: postgres
@@ -31,6 +33,31 @@ services:
             - "5432:5432"
         volumes:
             - pgdata:/var/lib/postgresql/data/
+
+    celery:
+        build: .
+        container_name: hma_celery
+        command: bash -c "celery -A hospital_management_api worker -l info & sleep 10 && celery -A hospital_management_api beat -l info"
+        volumes:
+            - .:/usr/src/app
+        environment:
+            - DEBUG=1
+            - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+
+        depends_on:
+            - django
+            - rabbitmq
+
+    rabbitmq:
+        image: "rabbitmq:management"
+        container_name: hma_rabbitmq
+        environment:
+            - RABBITMQ_DEFAULT_USER=admin
+            - RABBITMQ_DEFAULT_PASS=admin
+            - RABBITMQ_DEFAULT_VHOST=/
+        ports:
+            - "5672:5672"
+            - "15672:15672"
 
 volumes:
     pgdata:

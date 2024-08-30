@@ -9,5 +9,9 @@ class Assistant(models.Model):
     def name(self):
         return self.user.full_name
 
+    @property
+    def email(self):
+        return self.user.email
+
     def __str__(self):
         return f"Assistant {self.user.full_name}"

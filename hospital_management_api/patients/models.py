@@ -18,6 +18,10 @@ class Patient(models.Model):
     def name(self):
         return self.user.full_name
 
+    @property
+    def email(self):
+        return self.user.email
+
     def __str__(self):
         return F"Patient {self.user.full_name}"
 
