@@ -97,5 +97,42 @@ Once the Docker containers are running, the API will be accessible at http://loc
 
 ![image](https://github.com/user-attachments/assets/166dd303-2e5b-4d6b-acbf-41808a27f0d7)
 
+**Usage**
+
+To interact with the API, use tools like Insomnia or Postman. Below are some example requests:
+
+**Authentication**
+
+Obtain a JWT token by sending a POST request with your credentials.
+
+![image](https://github.com/user-attachments/assets/e087884a-2bee-4fb0-a454-e513967ae38b)
+
+**CRUD Operations**
+
+**Get All Patients**:
+
+![image](https://github.com/user-attachments/assets/6029b1f0-ea61-4844-9bfb-16ac4a0ec59e)
+
+**Create a new patient**
+
+![image](https://github.com/user-attachments/assets/9a3061a3-7edf-4155-80a1-0dd210cf8281)
+
+**Read a patient**
+
+![image](https://github.com/user-attachments/assets/891cd4a9-c273-4165-91fe-17ac83ebc421)
+
+**Update a patient**
+
+![image](https://github.com/user-attachments/assets/2882f8f3-aabe-4f84-b706-be51ac342410)
+
+**Delete a patient**
+
+![image](https://github.com/user-attachments/assets/d82d4482-ac4c-4aad-b9f8-e2be376a8094)
+
+
+
+
+
+
 
 
