@@ -63,10 +63,10 @@ Follow these steps to set up the project locally:
 Once the Docker containers are running, the API will be accessible at http://localhost:8000.
 
 6. **Access the RabbitMQ Management UI**: You can access the RabbitMQ Management UI at http://localhost:15672 using the credentials:
-  ```
-  Username: admin
-  Password: admin
-  ```
+     ```
+     Username: admin
+     Password: admin
+     ```
 ## Endpoints
 
 **users/**
@@ -129,10 +129,22 @@ Obtain a JWT token by sending a POST request with your credentials.
 
 ![image](https://github.com/user-attachments/assets/d82d4482-ac4c-4aad-b9f8-e2be376a8094)
 
+# Testing
 
+The API has a test suite implemented containing unit tests. You can check tests by doing:
+```
+$ docker-compose exec web python manage.py test
+```
+# Contributing
 
+**How to Contribute**: You can contribute by forking the repository, making your changes on a new branch, and submitting a pull request.
 
+**Code Conventions**: Follow PEP 8 for Python code. Use clear commit messages and add docstrings for all functions and classes.
 
+# License
 
+**License**: This project is licensed under the MIT License.
 
+# Authors
 
+Cristian Olteanu (Project Lead)
