@@ -67,4 +67,35 @@ Once the Docker containers are running, the API will be accessible at http://loc
   Username: admin
   Password: admin
   ```
+## Endpoints
+
+**users/**
+
+![image](https://github.com/user-attachments/assets/ba05c9c8-e00c-4bd8-bc23-1d76ef7948c1)
+
+**doctors/**
+
+![image](https://github.com/user-attachments/assets/e230de4d-06be-4bc6-86fb-9117f52a5911)
+
+**assistants/**
+
+![image](https://github.com/user-attachments/assets/d20f434b-4d80-4586-a7ad-39255a9a7a45)
+
+**treatments/**
+
+![image](https://github.com/user-attachments/assets/5f8142d2-a62c-4d4b-9090-bb9c8ecfccd6)
+
+**patients/**
+
+![image](https://github.com/user-attachments/assets/970730ec-8e84-41c9-82da-e3ef439d8398)
+
+**reports/**
+
+![image](https://github.com/user-attachments/assets/7fce7113-0412-45ea-999c-46c5347e93b6)
+
+**appointments/**
+
+![image](https://github.com/user-attachments/assets/166dd303-2e5b-4d6b-acbf-41808a27f0d7)
+
+
 
