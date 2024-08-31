@@ -35,3 +35,36 @@ I built this project from scratch with the purpose of grasping a good understand
 -  **A terminal or command line**: To run installation and project management commands.
 -  **Docker**: Required for running the project in a containerized environment.
 
+### Installation and Setup
+
+Follow these steps to set up the project locally:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/cristiol/hospital_management_api.git
+
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd hospital_management_api
+
+3. **Set up the email**
+  - Create a .env file in the root of the project directory if it doesn't already exist.
+  - Add your email address and other required email settings to the .env file.
+  - If you are using a different email service provider than Outlook, make sure to update the EMAIL_HOST setting. For example, if you are using Gmail, you should change it to:
+  ```
+  EMAIL_HOST='smtp.gmail.com'
+  ```
+
+4. **Build and Run the Docker Containers**:
+   ```bash
+   docker-compose up --build
+
+5. **Access the API**:
+Once the Docker containers are running, the API will be accessible at http://localhost:8000.
+
+6. **Access the RabbitMQ Management UI**: You can access the RabbitMQ Management UI at http://localhost:15672 using the credentials:
+  ```
+  Username: admin
+  Password: admin
+  ```
+
